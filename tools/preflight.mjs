@@ -34,14 +34,6 @@ check(
   origins.length ? `Configured ${origins.length} origin(s); wildcard is not accepted by this check.` : "Set RELAY_ALLOWED_ORIGINS to the exact origin that serves your Eaglercraft client."
 );
 
-const secret = env.RELAY_SECRET ?? "";
-check(
-  "Host-side secret configured",
-  secret.length >= 32,
-  secret ? "A 32+ character secret is present." : "No secret found. This only helps if the chosen relay software explicitly implements secret-based authentication.",
-  "warning"
-);
-
 check(
   "No game world files in this tool",
   true,
