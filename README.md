@@ -45,6 +45,7 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 - `docs/relay-implementation-review.md` — source review of the TypeScript relay candidate.
 - `docs/eaglerrelayjs-additional-audit.md` — follow-up audit covering handshake behavior, license metadata conflict, origin handling, join-code randomness, and debug logging.
 - `docs/u3-validation-plan.md` — test matrix and go/no-go criteria for exact U3 compatibility.
+- `docs/u3-protocol-compatibility-investigation.md` — evidence review explaining why the candidate is not yet certified for U3.
 - `package.json` — `npm run preflight` shortcut.
 
 ## Current status
@@ -52,6 +53,7 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 - Repository documentation and a host preflight utility prepared.
 - Preflight script syntax and pass/fail behavior tested with Node.js 22 in an isolated environment.
 - Source-inspected EaglerRelayJS as a candidate; U3 compatibility and private-player access remain unverified.
+- Investigated public U3 protocol evidence; no authoritative public U3 source/specification was found, so no compatibility claim is justified.
 - Added a concrete U3 validation matrix. No compatibility test has yet been run.
 - No relay binary has been installed or executed.
 - No hosting has been deployed.
