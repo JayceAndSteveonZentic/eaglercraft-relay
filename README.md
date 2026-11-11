@@ -34,9 +34,15 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 - GitHub Pages cannot run a persistent WebSocket relay process.
 - Never commit passwords, private keys, access tokens, invite codes, or other secrets.
 
+## Project files
+
+- `tools/preflight.mjs` — Node.js host preflight checker (not a relay server).
+- `tools/README.md` — run instructions and limitations.
+- `package.json` — `npm run preflight` shortcut.
+
 ## Current status
 
-- Repository documentation prepared.
+- Repository documentation and a host preflight utility prepared.
 - No relay binary has been installed or executed.
 - No hosting has been deployed.
 - The existing singleplayer world has not been changed.
