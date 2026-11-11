@@ -46,6 +46,7 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 - `docs/eaglerrelayjs-additional-audit.md` — follow-up audit covering handshake behavior, license metadata conflict, origin handling, join-code randomness, and debug logging.
 - `docs/u3-validation-plan.md` — test matrix and go/no-go criteria for exact U3 compatibility.
 - `docs/u3-protocol-compatibility-investigation.md` — evidence review explaining why the candidate is not yet certified for U3.
+- `docs/u3-lan-relay-candidate-review.md` — review of the only located candidate explicitly claiming U3 LAN-world support, including its opaque JAR, TURN dependency, open default origin policy, and unverified status.
 - `package.json` — `npm run preflight` shortcut.
 
 ## Current status
