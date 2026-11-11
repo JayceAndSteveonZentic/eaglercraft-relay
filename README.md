@@ -1,31 +1,42 @@
-# Eaglercraft 1.12.2 private shared-world relay
+# Eaglercraft 1.12.2 U3 private shared-world relay
 
-This repository is the project home. It does not run a relay just because files are stored on GitHub.
+This repository is the project home. GitHub stores files; it does not run a persistent WebSocket relay.
 
-## Important compatibility check
+## Confirmed client
 
-Eaglercraft 1.12.2 has multiple builds/updates. Shared-world support is reported for 1.12.2 U3, but older 1.12.2 builds may not include it. Check the version/update shown by the game before choosing relay software. Do not assume a 1.8.8 `sp-relay.jar` setup works with every 1.12.2 build.
+The owner reports using Eaglercraft 1.12.2 U3.
 
-## What this project needs
+## U3 relay candidate (not yet verified)
 
-1. A relay implementation explicitly compatible with the exact 1.12.2 client build.
-2. A server host that can run that relay and expose a secure WebSocket endpoint (`wss://`).
-3. The host's relay address configured in each player's client.
-4. A separate access-control plan. A relay address or unlisted endpoint is not, by itself, proof that only invited friends can connect.
+[Voxelra/AkaziMC-Shared-World-Relay](https://github.com/Voxelra/AkaziMC-Shared-World-Relay) describes itself as supporting 1.12.2 U3 and includes an `EaglerSPRelay.jar`.
 
-## What GitHub can and cannot do
+**Do not treat this as trusted or production-ready yet.** The public repository currently shows only two commits, no stars or forks, and provides a compiled JAR without corresponding source code in that repository. Its `instructions.txt` explicitly says much of its setup text is copied from a 1.5.2 README. The instructions also warn that the formerly free default TURN service is no longer free. Review the binary and hosting setup with a knowledgeable adult before running it.
 
-- GitHub can store source code, configuration examples, and documentation.
+## Privacy: important distinction
+
+A relay's `origin-whitelist` controls which website origins may connect to the relay. It does **not** authenticate individual players or guarantee that only invited friends can join. Keep the shared-world invite code private and only share it directly with intended friends. Do not publish it in this repository, a public chat, or a screenshot.
+
+A genuinely private setup needs a separate, verified access-control method. Do not assume an obscure `wss://` address is access control.
+
+## What is still required
+
+1. Verify the relay implementation is safe and actually interoperates with this exact U3 client.
+2. Choose a host that can run the relay continuously and provide a secure WebSocket endpoint (`wss://`).
+3. Configure the relay and any required STUN/TURN services.
+4. Add the relay address in Network Settings on each player's client.
+5. Test with one trusted friend before sharing the invite code more widely.
+
+## Device and world safety
+
+- The host must remain online while the owner is playing; the relay does not host the Minecraft world itself.
+- The existing singleplayer world is stored separately in the browser. Do not clear Chrome data, delete the world, or upload its files here as part of relay setup.
+- The school-managed Chromebook has Linux and Developer Tools disabled, so it is not a suitable machine for running the Java relay locally.
 - GitHub Pages cannot run a persistent WebSocket relay process.
-- Never commit passwords, private keys, access tokens, or other secrets.
-- Do not upload your browser-saved singleplayer world here as a relay setup step.
+- Never commit passwords, private keys, access tokens, invite codes, or other secrets.
 
 ## Current status
 
-- Repository initialized.
-- Relay software and hosting have **not** been installed or deployed.
-- The original singleplayer world should remain untouched until a separate backup is made.
-
-## Next step
-
-Confirm the exact client update/build shown on the Eaglercraft title screen (for example, 1.12.2 U2 or U3). Then select relay software that explicitly supports that build before deploying anything.
+- Repository documentation prepared.
+- No relay binary has been installed or executed.
+- No hosting has been deployed.
+- The existing singleplayer world has not been changed.
