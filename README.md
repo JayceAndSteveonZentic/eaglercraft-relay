@@ -38,11 +38,14 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 
 - `tools/preflight.mjs` — Node.js host preflight checker (not a relay server).
 - `tools/README.md` — run instructions and limitations.
+- `docs/relay-implementation-review.md` — source review of the TypeScript relay candidate and its unresolved security/compatibility issues.
 - `package.json` — `npm run preflight` shortcut.
 
 ## Current status
 
 - Repository documentation and a host preflight utility prepared.
+- Preflight script syntax and pass/fail behavior tested with Node.js 22 in an isolated environment.
+- Source-inspected EaglerRelayJS as a stronger candidate; U3 compatibility and private-player access remain unverified.
 - No relay binary has been installed or executed.
 - No hosting has been deployed.
 - The existing singleplayer world has not been changed.
