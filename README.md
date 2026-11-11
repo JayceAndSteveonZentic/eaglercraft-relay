@@ -40,6 +40,8 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 
 ## Project files
 
+- `Dockerfile` — pinned-source Docker build recipe for an adult-managed test host; not a deployed relay.
+- `docs/deployment-handoff.md` — build/run handoff and mandatory U3 validation gates.
 - `tools/preflight.mjs` — Node.js host preflight checker (not a relay server).
 - `tools/README.md` — run instructions and limitations.
 - `docs/relay-implementation-review.md` — source review of the TypeScript relay candidate.
