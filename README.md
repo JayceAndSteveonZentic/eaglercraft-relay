@@ -43,6 +43,7 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 - `tools/preflight.mjs` — Node.js host preflight checker (not a relay server).
 - `tools/README.md` — run instructions and limitations.
 - `docs/relay-implementation-review.md` — source review of the TypeScript relay candidate.
+- `docs/eaglerrelayjs-additional-audit.md` — follow-up audit covering handshake behavior, license metadata conflict, origin handling, join-code randomness, and debug logging.
 - `docs/u3-validation-plan.md` — test matrix and go/no-go criteria for exact U3 compatibility.
 - `package.json` — `npm run preflight` shortcut.
 
