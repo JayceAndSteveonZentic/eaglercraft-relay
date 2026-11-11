@@ -38,10 +38,15 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 - GitHub Pages cannot run a persistent WebSocket relay process.
 - Never commit passwords, private keys, access tokens, invite codes, or other secrets.
 
+## Browser-tab hosting design
+
+The intended mode is documented in [browser-tab-host-mode.md](docs/browser-tab-host-mode.md): your open Chromebook tab runs the world, while a separate relay only forwards connections. The tab must stay open; the relay must still be hosted elsewhere. This design is not yet enabled because exact U3 protocol compatibility has not been verified.
+
 ## Project files
 
 - `Dockerfile` — pinned-source Docker build recipe for an adult-managed test host; not a deployed relay.
 - `docs/deployment-handoff.md` — build/run handoff and mandatory U3 validation gates.
+- `docs/browser-tab-host-mode.md` — browser-tab world-hosting architecture and remaining blockers.
 - `tools/preflight.mjs` — Node.js host preflight checker (not a relay server).
 - `tools/README.md` — run instructions and limitations.
 - `docs/relay-implementation-review.md` — source review of the TypeScript relay candidate.
