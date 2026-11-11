@@ -1,0 +1,13 @@
+{
+  "name": "eaglercraft-relay-tools",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Preflight utilities for a separately hosted Eaglercraft shared-world relay",
+  "type": "module",
+  "scripts": {
+    "preflight": "node tools/preflight.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
