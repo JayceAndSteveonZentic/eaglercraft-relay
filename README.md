@@ -12,6 +12,10 @@ The owner reports using Eaglercraft 1.12.2 U3.
 
 **Do not treat this as trusted or production-ready yet.** The public repository currently shows only two commits, no stars or forks, and provides a compiled JAR without corresponding source code in that repository. Its `instructions.txt` explicitly says much of its setup text is copied from a 1.5.2 README. The instructions also warn that the formerly free default TURN service is no longer free. Review the binary and hosting setup with a knowledgeable adult before running it.
 
+## Source-inspectable alternative
+
+[WebMCDevelopment/EaglerRelayJS](https://github.com/WebMCDevelopment/EaglerRelayJS) is a TypeScript shared-world relay with readable source and an AGPL-3.0 license. It implements the relay handshake and join-code matching, but the project does not explicitly certify compatibility with this exact U3 client. Its join code is a bearer secret, not individual-player authentication. See [the source review](docs/relay-implementation-review.md) and [the exact U3 validation plan](docs/u3-validation-plan.md).
+
 ## Privacy: important distinction
 
 A relay's `origin-whitelist` controls which website origins may connect to the relay. It does **not** authenticate individual players or guarantee that only invited friends can join. Keep the shared-world invite code private and only share it directly with intended friends. Do not publish it in this repository, a public chat, or a screenshot.
@@ -38,14 +42,16 @@ A genuinely private setup needs a separate, verified access-control method. Do n
 
 - `tools/preflight.mjs` — Node.js host preflight checker (not a relay server).
 - `tools/README.md` — run instructions and limitations.
-- `docs/relay-implementation-review.md` — source review of the TypeScript relay candidate and its unresolved security/compatibility issues.
+- `docs/relay-implementation-review.md` — source review of the TypeScript relay candidate.
+- `docs/u3-validation-plan.md` — test matrix and go/no-go criteria for exact U3 compatibility.
 - `package.json` — `npm run preflight` shortcut.
 
 ## Current status
 
 - Repository documentation and a host preflight utility prepared.
 - Preflight script syntax and pass/fail behavior tested with Node.js 22 in an isolated environment.
-- Source-inspected EaglerRelayJS as a stronger candidate; U3 compatibility and private-player access remain unverified.
+- Source-inspected EaglerRelayJS as a candidate; U3 compatibility and private-player access remain unverified.
+- Added a concrete U3 validation matrix. No compatibility test has yet been run.
 - No relay binary has been installed or executed.
 - No hosting has been deployed.
 - The existing singleplayer world has not been changed.
